@@ -12,3 +12,9 @@ export const HEROES: Hero[] = [
   { id: 19, name: 'Magma' },
   { id: 20, name: 'Tornado' }
 ];
+// export class MockHeroes {
+
+//   getHeroes(): Hero[] {
+//     return HEROES;
+//   }
+// }
