@@ -4,6 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { APP_BASE_HREF } from '@angular/common';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -12,11 +17,21 @@ describe('AppComponent', () => {
         AppComponent,
         HeroesComponent,
         HeroDetailComponent,
-        MessagesComponent
+        MessagesComponent,
+        DashboardComponent
       ],
       imports: [
-        FormsModule
+        FormsModule,
+        RouterTestingModule.withRoutes([
+          { path: 'heroes', component: HeroesComponent },
+          { path: 'dashboard', component: DashboardComponent },
+          { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+          { path: 'detail/:id', component: HeroDetailComponent },
+        ])
       ],
+      providers: [
+        { provide: APP_BASE_HREF, useValue: '/' }
+      ]
     }).compileComponents();
   }));
   it('should create the app', async(() => {
