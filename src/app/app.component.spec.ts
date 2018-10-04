@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { APP_BASE_HREF } from '@angular/common';
 import {RouterTestingModule} from '@angular/router/testing';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -17,7 +18,8 @@ describe('AppComponent', () => {
         HeroesComponent,
         HeroDetailComponent,
         MessagesComponent,
-        DashboardComponent
+        DashboardComponent,
+        HeroSearchComponent
       ],
       imports: [
         FormsModule,
