@@ -6,6 +6,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { HeroesComponent } from '../heroes/heroes.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { APP_BASE_HREF } from '@angular/common';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('HeroDetailComponent', () => {
   let component: HeroDetailComponent;
@@ -14,7 +15,7 @@ describe('HeroDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ HeroDetailComponent, HeroesComponent, DashboardComponent ],
-      imports: [ FormsModule, AppRoutingModule ],
+      imports: [ FormsModule, AppRoutingModule, HttpClientTestingModule ],
       providers: [
         { provide: APP_BASE_HREF, useValue: '/' }
       ]
